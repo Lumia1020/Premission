@@ -13,6 +13,30 @@
     <url>http://maven.apache.org</url>
 
 
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.7</version>
+                <!--注意此处是放在 configuration 节点下 -->
+                <configuration>
+                    <configurationFile>${mybatis.generator.configurationFile}</configurationFile>
+                    <overwrite>true</overwrite>
+                    <verbose>true</verbose>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>${mysql.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+
+    </build>
 
 
 </project>
