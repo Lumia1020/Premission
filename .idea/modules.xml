@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Premission.iml" filepath="$PROJECT_DIR$/Premission.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Premission-Basic.iml" filepath="$PROJECT_DIR$/Premission-Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Premission-Basic/PremissionBasic.iml" filepath="$PROJECT_DIR$/Premission-Basic/PremissionBasic.iml" />
+    </modules>
+  </component>
+</project>
