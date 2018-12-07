@@ -14,12 +14,13 @@
 
     <!--引入 properties 文件-->
     <context:property-placeholder location="classpath:dbconfig.properties"></context:property-placeholder>
-
     <!-- 扫描注解，自动创建对象，依赖注入-->
-    <context:component-scan base-package="com.linyi.controller,com.linyi.service"></context:component-scan>
+    <context:component-scan base-package="com.linyi">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"></context:exclude-filter>
+    </context:component-scan>
     <!-- aop -->
     <!--<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>-->
-
     <!--首先配置数据源-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <!--此处 driver driverClassName 区别-->
@@ -34,7 +35,6 @@
         <!-- 配置获取连接等待超时的时间 -->
         <property name="maxWait" value="10000"/>
     </bean>
-
     <!--创建 SqlSessionFactory 会话工厂-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <!--注释原有 mybatis-config.xml 中数据源配置信息 -->
@@ -50,8 +50,8 @@
 
     <!--类似类码中通过 SqlSession 实例 getMapper  获取单个-->
     <!--<bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">-->
-        <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>-->
-        <!--<property name="mapperInterface" value="com.linyi.mapper.UserMapper"></property>-->
+    <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>-->
+    <!--<property name="mapperInterface" value="com.linyi.mapper.UserMapper"></property>-->
     <!--</bean>-->
 
     <!--自动扫描映射接口-->
@@ -62,8 +62,10 @@
 
     <!-- 创建 sqlSession对象 -->
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory" />
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
-
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 </beans>
