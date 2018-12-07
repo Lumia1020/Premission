@@ -1,4 +1,4 @@
-package com.linyi.service;
+package com.linyi.mapper;
 
 import com.linyi.model.Permission;
 import java.util.List;

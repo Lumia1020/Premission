@@ -49,8 +49,8 @@
                 <!--注意此处是放在 configuration 节点下 -->
                 <configuration>
                     <configurationFile>${mybatis.generator.configurationFile}</configurationFile>
-                    <overwrite>true</overwrite>
-                    <verbose>true</verbose>
+                    <!--<overwrite>true</overwrite>-->
+                    <!--<verbose>true</verbose>-->
                 </configuration>
                 <dependencies>
                     <dependency>
