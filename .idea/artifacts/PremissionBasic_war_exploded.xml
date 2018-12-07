@@ -6,6 +6,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="PremissionBasic" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.13" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
+          <element id="library" level="project" name="Maven: org.mybatis.generator:mybatis-generator-core:1.3.7" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.6" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/Premission-Basic/target/Premission-Basic-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />

@@ -24,7 +24,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.linyi.mapper"  targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources"/>
 
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.linyi.service"  targetProject="src/main/java"/>
 
