@@ -1,3 +1,5 @@
+
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -24,16 +26,16 @@ CREATE TABLE `role`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Table structure for role_premission
+-- Table structure for role_permission
 -- ----------------------------
-DROP TABLE IF EXISTS `role_premission`;
-CREATE TABLE `role_premission`  (
+DROP TABLE IF EXISTS `role_permission`;
+CREATE TABLE `role_permission`  (
   `role_id` int(11) NULL DEFAULT NULL,
   `permission_id` int(11) NULL DEFAULT NULL,
-  INDEX `role_premission_uid_fk`(`role_id`) USING BTREE,
-  INDEX `role_premission_pid_fk`(`permission_id`) USING BTREE,
-  CONSTRAINT `role_premission_pid_fk` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `role_premission_uid_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  INDEX `role_permission_uid_fk`(`role_id`) USING BTREE,
+  INDEX `role_permission_pid_fk`(`permission_id`) USING BTREE,
+  CONSTRAINT `role_permission_pid_fk` FOREIGN KEY (`permission_id`) REFERENCES `permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `role_permission_uid_fk` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
