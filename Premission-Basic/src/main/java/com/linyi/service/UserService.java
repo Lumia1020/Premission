@@ -53,7 +53,21 @@ public class UserService {
     }
 
     // 新增用户角色
-    public int insertRole(@Param("role_id") Integer roleId, @Param("user_id") Integer userId) {
+    public int insertRole(Integer roleId, Integer userId) {
         return this.userMapper.insertRole(roleId, userId);
+    }
+
+    public void insertRole(Integer[] roleId, Integer userId) {
+        // 先删除原有角色
+        this.userMapper.deleteRoles(userId);
+        if (roleId != null) {
+            for (int item : roleId) {
+                this.userMapper.insertRole(item, userId);
+            }
+        }
+    }
+
+    public User selectUserByUserNameAndPassword(String username, String password) {
+        return this.userMapper.selectUserByUserNameAndPassword(username, password);
     }
 }

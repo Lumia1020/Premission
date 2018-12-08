@@ -33,4 +33,6 @@ public interface UserMapper {
 
     // 新增用户角色
     int insertRole(@Param("role_id") Integer roleId,@Param("user_id")Integer userId);
+
+    User selectUserByUserNameAndPassword(@Param("username")  String username,@Param("password") String password);
 }

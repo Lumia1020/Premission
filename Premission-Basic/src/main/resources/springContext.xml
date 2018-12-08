@@ -36,7 +36,7 @@
         <property name="maxWait" value="10000"/>
     </bean>
     <!--创建 SqlSessionFactory 会话工厂-->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" >
         <!--注释原有 mybatis-config.xml 中数据源配置信息 -->
         <property name="dataSource" ref="dataSource"></property>
         <!--classpath:   classpath*：区别-->
@@ -61,9 +61,9 @@
     </bean>
 
     <!-- 创建 sqlSession对象 -->
-    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"/>
-    </bean>
+    <!--<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">-->
+        <!--<constructor-arg index="0" ref="sqlSessionFactory"/>-->
+    <!--</bean>-->
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
